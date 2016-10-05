@@ -10,10 +10,12 @@ import Foundation
 
 class MockDataAccess: DataAccess {
     func getMenuFor(_ date: Date, completionHandler: ([Product], NSError?) -> Void) {
-        let product1 = Product()
-//        product1.name = "Goulash"
+        
+        let product1 = Product(name: "Goulash", price: 20, imageUrl: Bundle.main.path(forResource: "Goulash", ofType: "jpg"))
+        /*
+        product1.name = "Goulash"
         product1.price = 20
-        product1.imageUrl = Bundle.main.path(forResource: "Goulash", ofType: "jpg")
+        product1.imageUrl = Bundle.main.path(forResource: "Goulash", ofType: "jpg")*/
         
         let product2 = Product()
         product2.name = "Pizza"

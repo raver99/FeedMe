@@ -26,8 +26,8 @@ class DayMenuViewController: UIViewController,  UITableViewDelegate, UITableView
         self.dataAccess!.getMenuFor(Date(), completionHandler: { [weak self] (dayMenuitems, error) in
             weak var weakSelf = self
             if(error == nil){
-                weakSelf.dayMenuItems?.append(contentsOf: dayMenuitems)
-                weakSelf.tableView.reloadData()
+                weakSelf?.dayMenuItems?.append(contentsOf: dayMenuitems)
+                weakSelf?.tableView.reloadData()
             }
         })
     }

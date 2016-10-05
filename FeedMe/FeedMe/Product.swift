@@ -8,13 +8,8 @@
 
 import Foundation
 
-class Product: NSObject {
+struct Product {
     var name : String!
     var price : NSNumber!
     var imageUrl : String?
-
-    //todo
-//    init(name: String,) {
-//        <#code#>
-//    }
 }
