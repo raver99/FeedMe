@@ -16,18 +16,21 @@ class DayMenuViewController: UIViewController,  UITableViewDelegate, UITableView
     var dataObject: String = ""
     let dayMenuItemCellIdentifier = "DayMenuItemCell"
     var dataAccess : DataAccess?
-    var dayMenuItems : [Product]? = []
+    var dayMenuItems : [Product]? {
+        didSet{
+            self.tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
-        self.tableView.delegate = self;
-        self.tableView.dataSource = self;
+        tableView.delegate = self;
+        tableView.dataSource = self;
         
-        self.dataAccess = MockDataAccess()
-        self.dataAccess!.getMenuFor(Date(), completionHandler: { [weak self] (dayMenuitems, error) in
+        dataAccess = MockDataAccess()
+        dataAccess?.getMenuFor(Date(), completionHandler: { [weak self] (dayMenuitems, error) in
             weak var weakSelf = self
-            if(error == nil){
+            if error == nil {
                 weakSelf?.dayMenuItems?.append(contentsOf: dayMenuitems)
-                weakSelf?.tableView.reloadData()
             }
         })
     }
@@ -37,14 +40,16 @@ class DayMenuViewController: UIViewController,  UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dayMenuItems?.count ?? 0
+        return dayMenuItems?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : DayMenuItemCell = tableView.dequeueReusableCell(withIdentifier: self.dayMenuItemCellIdentifier, for: indexPath) as! DayMenuItemCell
         
-        let currentProduct = self.dayMenuItems?[(indexPath as NSIndexPath).row]
-
+        guard let count = dayMenuItems?.count, count < indexPath.row else {
+            return cell
+        }
+        let currentProduct = self.dayMenuItems?[indexPath.row]
         cell.nameLabel.text = currentProduct?.name
         cell.priceLabel.text = "\(currentProduct?.price.stringValue ?? " ")lei"
         if let image = currentProduct?.imageUrl{
