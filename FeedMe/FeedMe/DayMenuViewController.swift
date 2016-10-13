@@ -16,21 +16,21 @@ class DayMenuViewController: UIViewController,  UITableViewDelegate, UITableView
     var dataObject: String = ""
     let dayMenuItemCellIdentifier = "DayMenuItemCell"
     var dataAccess : DataAccess?
-    var dayMenuItems : [Product]? {
+    var dayMenuItems : [Product] = [] {
         didSet{
             self.tableView.reloadData()
         }
     }
     
     override func viewDidLoad() {
-        tableView.delegate = self;
-        tableView.dataSource = self;
+        tableView.delegate = self
+        tableView.dataSource = self
         
         dataAccess = MockDataAccess()
         dataAccess?.getMenuFor(Date(), completionHandler: { [weak self] (dayMenuitems, error) in
             weak var weakSelf = self
             if error == nil {
-                weakSelf?.dayMenuItems?.append(contentsOf: dayMenuitems)
+                weakSelf?.dayMenuItems.append(contentsOf: dayMenuitems)
             }
         })
     }
@@ -40,19 +40,17 @@ class DayMenuViewController: UIViewController,  UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dayMenuItems?.count ?? 0
+        return dayMenuItems.count 
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : DayMenuItemCell = tableView.dequeueReusableCell(withIdentifier: self.dayMenuItemCellIdentifier, for: indexPath) as! DayMenuItemCell
         
-        guard let count = dayMenuItems?.count, count < indexPath.row else {
-            return cell
-        }
-        let currentProduct = self.dayMenuItems?[indexPath.row]
-        cell.nameLabel.text = currentProduct?.name
-        cell.priceLabel.text = "\(currentProduct?.price.stringValue ?? " ")lei"
-        if let image = currentProduct?.imageUrl{
+        
+        let currentProduct = self.dayMenuItems[indexPath.row]
+        cell.nameLabel.text = currentProduct.name
+        cell.priceLabel.text = "\(currentProduct.price.stringValue)lei"
+        if let image = currentProduct.imageUrl{
             cell.cellImageView.image = UIImage(named: image)
         }
         
