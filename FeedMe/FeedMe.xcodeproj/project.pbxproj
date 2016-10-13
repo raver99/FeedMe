@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		157A016A1DAFBFA90061B588 /* MenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157A01691DAFBFA90061B588 /* MenuDetailViewController.swift */; };
 		15801D0C1D915B3700545EB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15801D0B1D915B3700545EB8 /* AppDelegate.swift */; };
 		15801D0E1D915B3700545EB8 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15801D0D1D915B3700545EB8 /* RootViewController.swift */; };
 		15801D111D915B3700545EB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15801D0F1D915B3700545EB8 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		157A01691DAFBFA90061B588 /* MenuDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDetailViewController.swift; sourceTree = "<group>"; };
 		15801D081D915B3700545EB8 /* FeedMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15801D0B1D915B3700545EB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15801D0D1D915B3700545EB8 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				15801D411D92A8E900545EB8 /* ModelController.swift */,
 				15801D0D1D915B3700545EB8 /* RootViewController.swift */,
 				15801D431D92A97500545EB8 /* DayMenuViewController.swift */,
+				157A01691DAFBFA90061B588 /* MenuDetailViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				15801D441D92A97500545EB8 /* DayMenuViewController.swift in Sources */,
 				15801D521D92B9BE00545EB8 /* MockDataAccess.swift in Sources */,
 				15801D591D92C3AE00545EB8 /* DayMenuItemCell.swift in Sources */,
+				157A016A1DAFBFA90061B588 /* MenuDetailViewController.swift in Sources */,
 				15801D501D92B5B600545EB8 /* DataAccess.swift in Sources */,
 				15801D0E1D915B3700545EB8 /* RootViewController.swift in Sources */,
 				15801D4D1D92B51200545EB8 /* Product.swift in Sources */,

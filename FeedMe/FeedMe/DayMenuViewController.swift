@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class DayMenuViewController: UIViewController,  UITableViewDelegate, UITableViewDataSource {
     
@@ -47,7 +48,7 @@ class DayMenuViewController: UIViewController,  UITableViewDelegate, UITableView
         let cell : DayMenuItemCell = tableView.dequeueReusableCell(withIdentifier: self.dayMenuItemCellIdentifier, for: indexPath) as! DayMenuItemCell
         
         
-        let currentProduct = self.dayMenuItems[indexPath.row]
+        let currentProduct = dayMenuItems[indexPath.row]
         cell.nameLabel.text = currentProduct.name
         cell.priceLabel.text = "\(currentProduct.price.stringValue)lei"
         if let image = currentProduct.imageUrl{
@@ -55,5 +56,17 @@ class DayMenuViewController: UIViewController,  UITableViewDelegate, UITableView
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        let storyboardName  = Bundle.main.object(forInfoDictionaryKey: "UIMainStoryboardFile")
+        let storyBoard = UIStoryboard(name: storyboardName as! String, bundle: Bundle.main)
+        let detailVc : MenuDetailViewController = storyBoard.instantiateViewController(withIdentifier: "menuDetailVC") as! MenuDetailViewController
+        let currentProduct = self.dayMenuItems[indexPath.row]
+        detailVc.product = currentProduct
+        
+        present(detailVc, animated: true, completion: nil)
     }
 }
