@@ -45,7 +45,7 @@ class DayMenuViewController: UIViewController,  UITableViewDelegate, UITableView
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : DayMenuItemCell = tableView.dequeueReusableCell(withIdentifier: self.dayMenuItemCellIdentifier, for: indexPath) as! DayMenuItemCell
+        let cell : DayMenuItemCell = tableView.dequeueReusableCell(withIdentifier: dayMenuItemCellIdentifier, for: indexPath) as! DayMenuItemCell
         
         
         let currentProduct = dayMenuItems[indexPath.row]
@@ -60,13 +60,16 @@ class DayMenuViewController: UIViewController,  UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        guard let detailVC = storyboard?.instantiateViewController(withIdentifier: Constants.MenuDetailVC) as! MenuDetailViewController? else {
+            return
+        }
         
-        let storyboardName  = Bundle.main.object(forInfoDictionaryKey: "UIMainStoryboardFile")
-        let storyBoard = UIStoryboard(name: storyboardName as! String, bundle: Bundle.main)
-        let detailVc : MenuDetailViewController = storyBoard.instantiateViewController(withIdentifier: "menuDetailVC") as! MenuDetailViewController
-        let currentProduct = self.dayMenuItems[indexPath.row]
-        detailVc.product = currentProduct
+        guard indexPath.row < dayMenuItems.count else{
+            return
+        }
         
-        navigationController?.pushViewController(detailVc, animated: true);
+        let currentProduct = dayMenuItems[indexPath.row]
+        detailVC.product = currentProduct
+        navigationController?.pushViewController(detailVC, animated: true);
     }
 }
