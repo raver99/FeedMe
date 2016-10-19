@@ -67,6 +67,6 @@ class DayMenuViewController: UIViewController,  UITableViewDelegate, UITableView
         let currentProduct = self.dayMenuItems[indexPath.row]
         detailVc.product = currentProduct
         
-        present(detailVc, animated: true, completion: nil)
+        navigationController?.pushViewController(detailVc, animated: true);
     }
 }

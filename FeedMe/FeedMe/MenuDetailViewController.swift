@@ -22,7 +22,12 @@ class MenuDetailViewController: UIViewController {
         if let product = product {
             nameLabel.text = product.name
             priceLabel.text = "\(product.price.stringValue)lei"
+            if let image = product.imageUrl{
+                imageView.image = UIImage(named: image)
+            }
         }
+        
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     @IBAction func didClickAddToCart(_ sender: AnyObject) {
