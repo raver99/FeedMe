@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		157A016A1DAFBFA90061B588 /* MenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157A01691DAFBFA90061B588 /* MenuDetailViewController.swift */; };
 		15801D0C1D915B3700545EB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15801D0B1D915B3700545EB8 /* AppDelegate.swift */; };
 		15801D0E1D915B3700545EB8 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15801D0D1D915B3700545EB8 /* RootViewController.swift */; };
 		15801D111D915B3700545EB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15801D0F1D915B3700545EB8 /* Main.storyboard */; };
@@ -21,9 +22,11 @@
 		15801D551D92BBDB00545EB8 /* pizza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15801D531D92BBDB00545EB8 /* pizza.jpg */; };
 		15801D561D92BBDB00545EB8 /* Shawarma.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15801D541D92BBDB00545EB8 /* Shawarma.jpg */; };
 		15801D591D92C3AE00545EB8 /* DayMenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15801D581D92C3AE00545EB8 /* DayMenuItemCell.swift */; };
+		15916BCA1DB7A06600F8DB0D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15916BC91DB7A06600F8DB0D /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		157A01691DAFBFA90061B588 /* MenuDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDetailViewController.swift; sourceTree = "<group>"; };
 		15801D081D915B3700545EB8 /* FeedMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15801D0B1D915B3700545EB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15801D0D1D915B3700545EB8 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +43,7 @@
 		15801D531D92BBDB00545EB8 /* pizza.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pizza.jpg; sourceTree = "<group>"; };
 		15801D541D92BBDB00545EB8 /* Shawarma.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Shawarma.jpg; sourceTree = "<group>"; };
 		15801D581D92C3AE00545EB8 /* DayMenuItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayMenuItemCell.swift; sourceTree = "<group>"; };
+		15916BC91DB7A06600F8DB0D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 				15801D461D92A9EC00545EB8 /* Resources */,
 				15801D451D92A9D800545EB8 /* ViewControllers */,
 				15801D471D92A9FB00545EB8 /* Views */,
+				15916BC81DB7A01C00F8DB0D /* Utils */,
 				15801D0B1D915B3700545EB8 /* AppDelegate.swift */,
 				15801D171D915B3700545EB8 /* Info.plist */,
 			);
@@ -89,6 +94,7 @@
 				15801D411D92A8E900545EB8 /* ModelController.swift */,
 				15801D0D1D915B3700545EB8 /* RootViewController.swift */,
 				15801D431D92A97500545EB8 /* DayMenuViewController.swift */,
+				157A01691DAFBFA90061B588 /* MenuDetailViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -145,6 +151,14 @@
 				15801D581D92C3AE00545EB8 /* DayMenuItemCell.swift */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		15916BC81DB7A01C00F8DB0D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				15916BC91DB7A06600F8DB0D /* Constants.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,7 +239,9 @@
 				15801D441D92A97500545EB8 /* DayMenuViewController.swift in Sources */,
 				15801D521D92B9BE00545EB8 /* MockDataAccess.swift in Sources */,
 				15801D591D92C3AE00545EB8 /* DayMenuItemCell.swift in Sources */,
+				157A016A1DAFBFA90061B588 /* MenuDetailViewController.swift in Sources */,
 				15801D501D92B5B600545EB8 /* DataAccess.swift in Sources */,
+				15916BCA1DB7A06600F8DB0D /* Constants.swift in Sources */,
 				15801D0E1D915B3700545EB8 /* RootViewController.swift in Sources */,
 				15801D4D1D92B51200545EB8 /* Product.swift in Sources */,
 				15801D421D92A8E900545EB8 /* ModelController.swift in Sources */,
