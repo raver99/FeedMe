@@ -60,7 +60,7 @@ class DayMenuViewController: UIViewController,  UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        guard let detailVC = storyboard?.instantiateViewController(withIdentifier: Constants.MenuDetailVC) as! MenuDetailViewController?, indexPath.row < dayMenuItems.count else {
+        guard let detailVC = storyboard?.instantiateViewController(withIdentifier: Constants.MenuDetailVC) as? MenuDetailViewController, indexPath.row < dayMenuItems.count else {
             return
         }
         
