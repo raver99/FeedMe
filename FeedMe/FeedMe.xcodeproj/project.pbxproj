@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15444F8F1DC2251B00279837 /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15444F8E1DC2251B00279837 /* ShoppingCart.swift */; };
+		15444F911DC22A3100279837 /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15444F901DC22A3100279837 /* OrderItem.swift */; };
 		157A016A1DAFBFA90061B588 /* MenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157A01691DAFBFA90061B588 /* MenuDetailViewController.swift */; };
 		15801D0C1D915B3700545EB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15801D0B1D915B3700545EB8 /* AppDelegate.swift */; };
 		15801D0E1D915B3700545EB8 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15801D0D1D915B3700545EB8 /* RootViewController.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15444F8E1DC2251B00279837 /* ShoppingCart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
+		15444F901DC22A3100279837 /* OrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
 		157A01691DAFBFA90061B588 /* MenuDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDetailViewController.swift; sourceTree = "<group>"; };
 		15801D081D915B3700545EB8 /* FeedMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15801D0B1D915B3700545EB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				15801D4C1D92B51200545EB8 /* Product.swift */,
+				15444F8E1DC2251B00279837 /* ShoppingCart.swift */,
+				15444F901DC22A3100279837 /* OrderItem.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -241,6 +247,8 @@
 				15801D591D92C3AE00545EB8 /* DayMenuItemCell.swift in Sources */,
 				157A016A1DAFBFA90061B588 /* MenuDetailViewController.swift in Sources */,
 				15801D501D92B5B600545EB8 /* DataAccess.swift in Sources */,
+				15444F911DC22A3100279837 /* OrderItem.swift in Sources */,
+				15444F8F1DC2251B00279837 /* ShoppingCart.swift in Sources */,
 				15916BCA1DB7A06600F8DB0D /* Constants.swift in Sources */,
 				15801D0E1D915B3700545EB8 /* RootViewController.swift in Sources */,
 				15801D4D1D92B51200545EB8 /* Product.swift in Sources */,

@@ -13,5 +13,8 @@ class DayMenuItemCell: UITableViewCell {
     @IBOutlet weak var cellImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var noOfOrderedItemsLabel: UILabel!
+    @IBOutlet weak var removeButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
     
 }
