@@ -16,5 +16,37 @@ class DayMenuItemCell: UITableViewCell {
     @IBOutlet weak var noOfOrderedItemsLabel: UILabel!
     @IBOutlet weak var removeButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
+    var onAddButtonTapped : (() -> Void)? = nil
+    
+    @IBAction func addButtonTapped(_ sender: Any) {
+        onAddButtonTapped?()
+    }
+    
+    var product : Product?{
+        didSet{
+            updateUIOnProductChange()
+        }
+    }
+    
+    func updateUIOnProductChange() {
+        guard let product = product else {
+            return
+        }
+        
+        nameLabel.text = product.name
+        priceLabel.text = "\(product.price.stringValue)lei"
+        if let image = product.imageUrl{
+            cellImageView.image = UIImage(named: image)
+        }
+        
+        if let orderItem = ShoppingCart.sharedInstance.existingOrderIdemFor(product: product){
+            removeButton.isHidden = false
+            noOfOrderedItemsLabel.isHidden = false
+            noOfOrderedItemsLabel.text = "\(orderItem.numberOfItems)"
+        }else{
+            removeButton.isHidden = true
+            noOfOrderedItemsLabel.isHidden = true
+        }
+    }
     
 }

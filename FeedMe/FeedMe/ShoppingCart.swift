@@ -15,6 +15,7 @@ class ShoppingCart{
 
     
     func add(product: Product){
+        NSLog("Item added to cart")
         if let orderItem = existingOrderIdemFor(product: product){
             orderItem.numberOfItems += 1
         }else{
@@ -31,12 +32,11 @@ class ShoppingCart{
     }
     
     func existingOrderIdemFor(product:Product) -> OrderItem?{
-        for orderItem in orderedItems{
-            if(orderItem.product == product){
-                return orderItem
-            }
-        }
         
-        return nil
+        let itemsForProduct = orderedItems.filter { $0.product == product }
+        
+        assert(itemsForProduct.count <= 1 )
+        
+        return itemsForProduct.first
     }
 }
