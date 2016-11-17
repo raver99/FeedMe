@@ -47,12 +47,10 @@ class DayMenuViewController: UIViewController,  UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : DayMenuItemCell = tableView.dequeueReusableCell(withIdentifier: dayMenuItemCellIdentifier, for: indexPath) as! DayMenuItemCell
         
-        
         let currentProduct = dayMenuItems[indexPath.row]
-        cell.nameLabel.text = currentProduct.name
-        cell.priceLabel.text = "\(currentProduct.price.stringValue)lei"
-        if let image = currentProduct.imageUrl{
-            cell.cellImageView.image = UIImage(named: image)
+        cell.product = currentProduct
+        cell.onAddButtonTapped = {
+            ShoppingCart.sharedInstance.add(product: currentProduct)
         }
         
         return cell
@@ -68,4 +66,9 @@ class DayMenuViewController: UIViewController,  UITableViewDelegate, UITableView
         detailVC.product = currentProduct
         navigationController?.pushViewController(detailVC, animated: true);
     }
+    
+    @IBAction func removeButtonClicked(_ sender: AnyObject) {
+        
+    }
+    
 }
