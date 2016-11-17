@@ -38,6 +38,7 @@ class DayMenuViewController: UIViewController,  UITableViewDelegate, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         dayLabel.text = dataObject
+        self.tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,6 +52,15 @@ class DayMenuViewController: UIViewController,  UITableViewDelegate, UITableView
         cell.product = currentProduct
         cell.onAddButtonTapped = {
             ShoppingCart.sharedInstance.add(product: currentProduct)
+            if let orderItem = ShoppingCart.sharedInstance.existingOrderIdemFor(product: currentProduct) {
+                cell.numberOfItems = orderItem.numberOfItems
+            }
+        }
+        
+        cell.onRemoveButtonTapped = {
+            ShoppingCart.sharedInstance.remove(product: currentProduct)
+            let orderItem = ShoppingCart.sharedInstance.existingOrderIdemFor(product: currentProduct)
+            cell.numberOfItems = orderItem?.numberOfItems ?? 0
         }
         
         return cell

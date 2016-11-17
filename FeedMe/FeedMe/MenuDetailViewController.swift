@@ -32,6 +32,9 @@ class MenuDetailViewController: UIViewController {
     
     @IBAction func didClickAddToCart(_ sender: AnyObject) {
         NSLog("clicked add to cart")
+        if let product = product {
+            ShoppingCart.sharedInstance.add(product: product)
+        }
     }
 
 }

@@ -16,18 +16,21 @@ class ShoppingCart{
     
     func add(product: Product){
         NSLog("Item added to cart")
-        if let orderItem = existingOrderIdemFor(product: product){
-            orderItem.numberOfItems += 1
-        }else{
-            let orderItem = OrderItem(product: product)
-            orderedItems.append(orderItem)
+        var orderItem = existingOrderIdemFor(product: product);
+        if orderItem == nil{
+            orderItem = OrderItem(product: product)
+            orderedItems.append(orderItem!)
         }
+        orderItem?.numberOfItems += 1
     }
     
     func remove(product: Product){
         if let orderItem = existingOrderIdemFor(product: product){
            let index = orderedItems.index(of: orderItem)
-            orderedItems.remove(at: index!)
+            orderItem.numberOfItems -= 1
+            if orderItem.numberOfItems <= 0 {
+                orderedItems.remove(at: index!)
+            }
         }
     }
     

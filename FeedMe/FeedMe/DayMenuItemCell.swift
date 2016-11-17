@@ -17,12 +17,23 @@ class DayMenuItemCell: UITableViewCell {
     @IBOutlet weak var removeButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     var onAddButtonTapped : (() -> Void)? = nil
+    var onRemoveButtonTapped : (() -> Void)? = nil
     
     @IBAction func addButtonTapped(_ sender: Any) {
         onAddButtonTapped?()
     }
     
+    @IBAction func removeButtonTapped(_ sender: Any) {
+        onRemoveButtonTapped?()
+    }
+    
     var product : Product?{
+        didSet{
+            updateUIOnProductChange()
+        }
+    }
+    
+    var numberOfItems: Int = 0 {
         didSet{
             updateUIOnProductChange()
         }

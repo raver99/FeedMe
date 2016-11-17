@@ -177,6 +177,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="removeButtonClicked:" destination="PZp-Kq-5Gj" eventType="touchUpInside" id="bVt-fG-096"/>
+                                                        <action selector="removeButtonTapped:" destination="coi-9j-pul" eventType="touchUpInside" id="isA-3g-F7S"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0F9-kq-iLZ">
